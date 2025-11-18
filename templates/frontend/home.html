@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1 class="home-title">Hostel Management System</h1>
+    <div class="home-buttons" >
+    <a href="{% url 'person' %}"><button>Person Details</button></a>
+    <a href="{% url 'fee' %}"><button>Hostel Fee</button></a>
+    <a href="{% url 'menu' %}"><button>Hostel Menu</button></a>
+    </div>
+</body>
+</html>
