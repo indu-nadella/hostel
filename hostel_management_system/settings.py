@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'hostel_management_system.wsgi.application'
 #     }
 # }
 import os
-if os.environ.get('Render'):
+if os.environ.get('RENDER'):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.mysql",
@@ -93,6 +93,17 @@ if os.environ.get('Render'):
             "PASSWORD": os.environ.get("MYSQLPASSWORD"),
             "HOST": os.environ.get("MYSQLHOST"),
             "PORT": os.environ.get("MYSQLPORT","3306"),
+        }
+    }
+else:   # Local MySQL
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "hostel_db",
+            "USER": "root",
+            "PASSWORD": "Indu@6304626984",
+            "HOST": "127.0.0.1",
+            "PORT": "3306",
         }
     }
 
