@@ -82,15 +82,15 @@ WSGI_APPLICATION = 'hostel_management_system.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
+import os
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "hostel_db",
-        "USER": "root",
-        "PASSWORD": "Indu@6304626984",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
+        "NAME": os.environ.get("MYSQLDATABASE"),
+        "USER": os.environ.get("MYSQLUSER"),
+        "PASSWORD": os.environ.get("MYSQLPASSWORD"),
+        "HOST": os.environ.get("MYSQLHOST"),
+        "PORT": os.environ.get("MYSQLPORT","3306"),
     }
 }
 
